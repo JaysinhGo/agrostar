@@ -1,0 +1,37 @@
+.headerBox {
+    box-shadow: 0 0px 6px rgba(0,0,0,0.16), 0 0px 6px rgba(0,0,0,0.23);
+    position: relative;
+    background: #fff;
+}
+
+
+.headerBox .brand-logo {
+    position: absolute;
+    background-image: url('./../images/agrologo.png');
+    height: 40px;
+    width: 120px;
+    background-size: 120px;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    left: 20px;
+    top: 0;
+    bottom: 10px;
+    margin: auto 0;
+}
+
+.headerBox ul {
+    display: inline-block;
+    width: 100%;
+}
+.headerBox li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.headerBox li:last-child {
+    margin-right:20px;
+}
+
+.headerBox a {
+    color: #931320 !important;
+} 
