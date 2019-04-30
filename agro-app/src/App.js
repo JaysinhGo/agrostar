@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import {BrowserRouter} from 'react-router-dom'
 import Header from './components/Header'
+import Main from './containers/Main'
 import Footer from './components/Footer'
 
 class App extends Component {
@@ -9,7 +10,7 @@ class App extends Component {
        <BrowserRouter>
           <div className="App">
             <Header/>
-            <main></main>
+            <Main/>
             <Footer/>
           </div>
        </BrowserRouter>

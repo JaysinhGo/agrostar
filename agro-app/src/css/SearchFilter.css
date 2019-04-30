@@ -1,0 +1,15 @@
+.customInput {
+    margin-top: -0.5rem;
+    position: relative;
+}
+.customInput input, .customInput input:hover, .customInput input:active, .customInput input:focus{
+    border-width: 0px !important;
+    margin: 0px !important;
+    box-shadow: unset !important;
+}
+
+.customInput i{
+    position: absolute;
+    right: 0.8rem;
+    top: 0.8rem;
+}

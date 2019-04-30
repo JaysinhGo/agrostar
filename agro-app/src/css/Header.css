@@ -1,3 +1,7 @@
+.header {
+    z-index: 1;
+}
+
 .headerBox {
     box-shadow: 0 0px 6px rgba(0,0,0,0.16), 0 0px 6px rgba(0,0,0,0.23);
     position: relative;
@@ -29,7 +33,7 @@
 }
 
 .headerBox li:last-child {
-    margin-right:20px;
+    margin-right: 13px;
 }
 
 .headerBox a {

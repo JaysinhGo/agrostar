@@ -1,0 +1,6 @@
+.msg-info blockquote {
+    border-left-color: #377c1c !important;
+}
+.msg-err blockquote {
+    border-left-color: #9c221e !important;
+}
