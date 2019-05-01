@@ -7,7 +7,7 @@ const Cart = (props)=>{
     let productList = Object.values(props.cartData);
     let productCount = arr => arr.reduce((a,b) => a + b, 0)
     productCount = productCount(productList);
-
+    
     return(
         <div className={"row cartBoxContainer scale-transition " + (productCount ? 'scale-in':'scale-out')}>
             <div className="col s0 m3 l3"></div>
