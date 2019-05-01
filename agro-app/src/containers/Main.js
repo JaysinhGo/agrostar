@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import ProductList from '../components/ProductList'
 import SearchFilter from '../components/SearchFilter'
-import { addToCart } from '../actions/cartActions'
+import Cart from '../components/Cart'
+import {addToCart, addQuantity,  subtractQuantity} from '../actions/cartActions'
 
 class Main extends Component{
     constructor(props) {
@@ -17,10 +18,15 @@ class Main extends Component{
             this.props.addToCart(this.props.cartData);
         },
         increaseQuantity : (ID) => {
-
+            this.props.cartData[ID]++;
+            this.props.addQuantity(this.props.cartData);
         },
         decreaseQuantity : (ID) => {
-
+            this.props.cartData[ID]--;
+            if(!this.props.cartData[ID]){
+                delete this.props.cartData[ID];
+            }
+            this.props.subtractQuantity(this.props.cartData);
         }
     };
     
@@ -37,9 +43,10 @@ class Main extends Component{
                 <div className="col s12 m12 l12 center-align">   
                     <SearchFilter handleFilter={this.handleFilter} />
                 </div>
-                <div className="col s12 m12 l12 center-align">
+                <div className="col s12 m12 l12 center-align product-body">
                     <ProductList filterProducts={filterProducts} eventhandler={this.eventhandler} />
                 </div>
+                <Cart />
             </div>
         )
     }
@@ -53,7 +60,9 @@ const mapStateToProps = (state)=>{
 }
 const mapDispatchToProps= (dispatch)=>{
     return{
-        addToCart: (data)=>{dispatch(addToCart(data))}
+        addToCart: (data)=>{dispatch(addToCart(data))},
+        addQuantity: (data)=>{dispatch(addQuantity(data))},
+        subtractQuantity: (data)=>{dispatch(subtractQuantity(data))},
     }
 }
 

@@ -1,4 +1,4 @@
-import { ADD_TO_CART,REMOVE_ITEM,SUB_QUANTITY,ADD_QUANTITY,ADD_SHIPPING } from '../actions/action-types/cart-actions'
+import { ADD_TO_CART,SUB_QUANTITY,ADD_QUANTITY } from '../actions/action-types/cart-actions'
 
 const initState = {  
     cartData: {},
@@ -69,11 +69,36 @@ const initState = {
 
 const cartReducer= (state = initState,action)=>{
     if(action.type === ADD_TO_CART){
-        console.log(state);
-        console.log(action);
+        const newCartData = {
+          ...state.cartData
+        };
+        //newCartData[action.id] = 1;
+        console.log('new cart data', newCartData);
         return{
             ...state,
-            cartData: state.cartData
+            cartData: newCartData
+        }
+    }
+    if(action.type === ADD_QUANTITY){
+        const newCartData = {
+          ...state.cartData
+        };
+        //newCartData[action.id] = 1;
+        console.log('new cart data', newCartData);
+        return{
+            ...state,
+            cartData: newCartData
+        }
+    }
+    if(action.type === SUB_QUANTITY){
+        const newCartData = {
+          ...state.cartData
+        };
+        //newCartData[action.id] = 1;
+        console.log('new cart data', newCartData);
+        return{
+            ...state,
+            cartData: newCartData
         }
     }
     return state

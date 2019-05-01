@@ -1,0 +1,36 @@
+.cartBoxContainer {
+    position: fixed;
+    bottom: 3.5rem;
+    width: 100%;
+    min-height: 0px;
+    z-index: 1;
+}
+
+.cartBoxContainer .cartBox {
+    background: #377c1c;
+    color: #ffffff;
+    margin: 0 auto;
+    width: 95%;
+}
+
+.cartBoxContainer .cartBox .row {
+    margin-bottom: 0px;
+}
+
+.cartBoxContainer .cartBox .count {
+    padding: 10px 0;
+    vertical-align: middle;
+    position: relative;
+}
+
+.productCount {
+    margin-left: 25px;
+}
+.pipe {
+    display: inline-block;
+    width: 1px;
+    margin: 0 10px;
+    height: 15px;
+    background: #ffffff;
+    margin-top: 3px;
+}

@@ -1,5 +1,5 @@
 
-import { ADD_TO_CART,REMOVE_ITEM,SUB_QUANTITY,ADD_QUANTITY,ADD_SHIPPING} from './action-types/cart-actions'
+import { ADD_TO_CART,SUB_QUANTITY,ADD_QUANTITY} from './action-types/cart-actions'
 
 //add cart action
 export const addToCart= (id)=>{
@@ -8,10 +8,10 @@ export const addToCart= (id)=>{
         id
     }
 }
-//remove item action
-export const removeItem=(id)=>{
+//add qt action
+export const addQuantity=(id)=>{
     return{
-        type: REMOVE_ITEM,
+        type: ADD_QUANTITY,
         id
     }
 }
@@ -19,13 +19,6 @@ export const removeItem=(id)=>{
 export const subtractQuantity=(id)=>{
     return{
         type: SUB_QUANTITY,
-        id
-    }
-}
-//add qt action
-export const addQuantity=(id)=>{
-    return{
-        type: ADD_QUANTITY,
         id
     }
 }

@@ -12,3 +12,7 @@ main {
 .cart {
   width: 100%;
 }
+
+.cart .product-body {
+  margin-bottom: 20px;
+}
