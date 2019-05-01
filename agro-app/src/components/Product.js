@@ -3,7 +3,6 @@ import './../css/Product.css'
 import AppButtons from './AppButtons'
 
 const Product = (props)=>{
-    console.log(props);
     let productData = props.productData;
     let imageStyle = {
         backgroundImage: 'url(' + productData.productImages[0].name + ')',
@@ -21,7 +20,7 @@ const Product = (props)=>{
                 <div className="card-content">
                     <p><b>Rs. {productData.sellingPrice}</b></p>
                 </div>
-                <AppButtons />
+                <AppButtons productData={productData} />
             </div>
         </div>
     )
