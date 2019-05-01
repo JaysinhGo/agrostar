@@ -34,3 +34,11 @@
     background: #ffffff;
     margin-top: 3px;
 }
+.viewBagArrow i{
+    display: inline-block;
+}
+
+.viewBagArrow div {
+    position: absolute;
+    right: 10px;
+}

@@ -3,11 +3,10 @@ import { connect } from 'react-redux'
 import './../css/Cart.css'
 
 const Cart = (props)=>{
-    console.log(props.cartData);
-    let productList = Object.values(props.cartData);
+    let totalAmount = props.totalAmount + '';
+    let productListValue = Object.values(props.cartData);
     let productCount = arr => arr.reduce((a,b) => a + b, 0)
-    productCount = productCount(productList);
-    
+    productCount = productCount(productListValue);
     return(
         <div className={"row cartBoxContainer scale-transition " + (productCount ? 'scale-in':'scale-out')}>
             <div className="col s0 m3 l3"></div>
@@ -17,9 +16,12 @@ const Cart = (props)=>{
                         <div className="col s6 m6 l6 left-align count valign-wrapper">
                             <span className="productCount"> {productCount} items</span>
                             <span className="pipe"></span>
-                            <span className="amountCount">Rs. 500</span>
+                            <span className="amountCount">Rs. {totalAmount} </span>
                         </div>
-                        <div className="col s6 m6 l6 valign-wrapper right-align"></div>
+                        <div className="col s6 m6 l6 valign-wrapper right-align viewBagArrow">
+                            <span>VIEW BAG</span>
+                            <i className="material-icons">chevron_right</i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -31,7 +33,8 @@ const Cart = (props)=>{
 const mapStateToProps = (state)=>{
     return {
         cartData: state.cartData,
-        productList: state.productList
+        productList: state.productList,
+        totalAmount: state.totalAmount
     }
 }
 

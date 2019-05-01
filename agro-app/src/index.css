@@ -16,3 +16,11 @@ main {
 .cart .product-body {
   margin-bottom: 20px;
 }
+
+.show{
+  display: block !important;
+}
+
+.hide{
+  display: none !important;
+}

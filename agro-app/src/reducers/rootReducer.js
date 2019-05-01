@@ -1,22 +1,32 @@
-import { ADD_TO_CART,SUB_QUANTITY,ADD_QUANTITY, APP_DATA_SUCCESS } from '../actions/action-types/cart-actions'
+import { ADD_TO_CART,SUB_QUANTITY,ADD_QUANTITY, APP_DATA_SUCCESS, APP_SESSION_DATA, UPDATE_AMOUNT, APP_SESSION_AMOUNT } from '../actions/action-types/cart-actions'
 
 const initState = {  
     cartData: {},
-    productList:[]
+    productList:[],
+    totalAmount: 0
 }
 
 const rootReducer= (state = initState,action)=>{
     if(action.type === APP_DATA_SUCCESS){
-        const newProductList = {
-            ...state.productList
-        };
-        return{
+        return {
             ...state,
-            productList: newProductList
+            productList: action.data
+        }
+    }
+    if(action.type === APP_SESSION_DATA){
+        return {
+            ...state,
+            cartData: action.data
+        }
+    }
+    if(action.type === APP_SESSION_AMOUNT){
+        let amount = !isNaN(action) ? action : action.data;
+        return {
+            ...state,
+            totalAmount: amount
         }
     }
     if(action.type === ADD_TO_CART){
-        alert();
         const newCartData = {
           ...state.cartData
         };
@@ -41,6 +51,12 @@ const rootReducer= (state = initState,action)=>{
         return{
             ...state,
             cartData: newCartData
+        }
+    }
+    if(action.type === UPDATE_AMOUNT){
+        return{
+            ...state,
+            totalAmount: action.data
         }
     }
     return state

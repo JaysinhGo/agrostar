@@ -9,7 +9,7 @@ import './../css/Header.css'
                 </div>
                 <div className="col s6 offset-s6">
                     <ul className="right-align">
-                        <li><i className="material-icons">refresh</i></li>
+                        <li><i onClick={(e) => window.location.reload()} className="material-icons">refresh</i></li>
                         <li><i className="material-icons">person</i></li>
                     </ul>
                 </div>
