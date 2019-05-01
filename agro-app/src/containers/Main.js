@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import axios from 'axios';
 import ProductList from '../components/ProductList'
 import SearchFilter from '../components/SearchFilter'
 import Cart from '../components/Cart'
-import {addToCart, addQuantity,  subtractQuantity} from '../actions/cartActions'
+import {addToCart, addQuantity,  subtractQuantity, appDataSuccess} from '../actions/cartActions'
 
 class Main extends Component{
     constructor(props) {
@@ -11,6 +12,14 @@ class Main extends Component{
         this.state = { 
             "searchValue": ""
         }
+    }
+    componentWillMount =()=> {
+        axios.get('http://www.mocky.io/v2/5b3de5ed310000db1f6de257').then(res => {
+            console.log(res.data.responseData.productLis);
+            this.props.appDataSuccess(res.data.responseData.productList);
+        }).catch(err => {
+          
+        });
     }
     eventhandler = {
         addProduct : (ID) => {
@@ -63,6 +72,7 @@ const mapDispatchToProps= (dispatch)=>{
         addToCart: (data)=>{dispatch(addToCart(data))},
         addQuantity: (data)=>{dispatch(addQuantity(data))},
         subtractQuantity: (data)=>{dispatch(subtractQuantity(data))},
+        appDataSuccess : (data)=>{dispatch(appDataSuccess(data))}
     }
 }
 
