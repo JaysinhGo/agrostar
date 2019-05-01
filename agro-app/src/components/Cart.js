@@ -19,8 +19,10 @@ const Cart = (props)=>{
                             <span className="amountCount">Rs. {totalAmount} </span>
                         </div>
                         <div className="col s6 m6 l6 valign-wrapper right-align viewBagArrow">
-                            <span>VIEW BAG</span>
-                            <i className="material-icons">chevron_right</i>
+                            <div className="valign-wrapper">
+                                <span>VIEW BAG</span>
+                                <i className="material-icons">chevron_right</i>
+                            </div>
                         </div>
                     </div>
                 </div>
